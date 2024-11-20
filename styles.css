@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff0f5; /* Rosa claro */
+}
+
+header {
+    background: #ff69b4; /* Rosa Pink */
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#produtos h2 {
+    font-size: 2rem;
+    color: #ff1493;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Largura mínima dos produtos */
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.produto {
+    background: #ffe4e1; /* Rosa pálido */
+    padding: 1rem;
+    border: 1px solid #ff69b4;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    width: 220px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.produto img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Altura máxima da imagem */
+    object-fit: cover; /* Preenche o contêiner */
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+/* Efeito de zoom para produtos ao passar o mouse */
+.produto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.produto:hover img {
+    transform: scale(1.1);
+}
+
+/* Efeito para destacar apenas o produto clicado (funciona para mobile e desktop) */
+.produto:active {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Destaque do produto clicado */
+.destaque {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#sobre h2 {
+    font-size: 2rem;
+    color: #ff1493;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#sobre p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+footer {
+    background: #ff69b4;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+a button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Efeito de zoom para o botão ao passar o mouse */
+a button:hover {
+    background-color: #ff1493; /* Rosa mais escuro */
+    transform: scale(1.05);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Ajuste no tamanho da fonte */
+    }
+
+    nav ul {
+        flex-direction: column; /* Altera a direção do menu para coluna */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Ajuste do espaçamento entre os itens do menu */
+    }
+
+    #produtos h2 {
+        font-size: 1.8rem; /* Tamanho da fonte menor em telas pequenas */
+    }
+
+    .produtos-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Colunas menores em telas pequenas */
+    }
+
+    .produto {
+        padding: 0.5rem; /* Menos padding para produtos */
+    }
+
+    a button {
+        padding: 0.5rem 1rem; /* Ajuste no tamanho do botão */
+        font-size: 0.9rem; /* Menor tamanho da fonte no botão */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem; /* Tamanho da fonte menor ainda */
+    }
+
+    #produtos h2 {
+        font-size: 1.5rem; /* Tamanho da fonte para título de produtos */
+    }
+
+    #sobre h2 {
+        font-size: 1.8rem; /* Tamanho da fonte menor para 'Sobre' */
+    }
+
+    #sobre p {
+        font-size: 1rem; /* Tamanho da fonte menor para parágrafos */
+    }
+}
